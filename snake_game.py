@@ -30,7 +30,7 @@ BLUE2 = (0, 100, 255)
 BLACK = (0,0,0)
 
 BLOCK_SIZE = 20
-SPEED = 20
+SPEED = 160
 
 class SnakeGameAI:
     
@@ -101,7 +101,7 @@ class SnakeGameAI:
         # 6. return game over and score
         return reward,game_over, self.score
     
-    def is_collision(self,pt):
+    def is_collision(self,pt=None):
         # hits boundary
         if pt is None:  
             pt=self.head
