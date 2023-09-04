@@ -7,6 +7,10 @@ This repository contains my implementation of a Snake game using reinforcement l
 ### Demo of project outcome
 
 
+https://github.com/Hemanth-Thaluru/reinforcement_learning/assets/88128965/530dfa6c-cb4f-4463-873c-20e1e81725aa
+
+
+
 
 ## Project Structure
 
