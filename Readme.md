@@ -4,9 +4,6 @@
 
 This repository contains my implementation of a Snake game using reinforcement learning. I built this project as part of my weekend project and to apply reinforcement learning concepts in a practical way. The goal is to teach an AI agent to play the classic Snake game using PyTorch and Pygame.
 
-
-Welcome to the "Teach AI To Play Snake!" repository, where we explore the fascinating world of reinforcement learning by teaching an AI to play the classic Snake game. This project is part of a Python Reinforcement Learning schedule, where I build everything from scratch using Pygame and PyTorch.
-
 ### Demo of project outcome
 
 
