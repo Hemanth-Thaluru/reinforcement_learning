@@ -1,4 +1,9 @@
 snake_game_env
 *.pth
 *.DS_Store
+__pycache__/
+
+
+
+
 
