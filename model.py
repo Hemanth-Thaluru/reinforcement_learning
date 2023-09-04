@@ -11,10 +11,11 @@ class Linear_QNet(nn.Module):
         self.linear2=nn.Linear(hidden_size,output_size)
 
     def forward(self,x):
-        x=F.relu(self.linear1(x))
+        x=F.relu(self.linear1(x))   # non linear 
         x=self.linear2(x)
         return x
     
+    # saving the model
     def save(self,file_name='model.pth'):
         model_folder_path = './model'
         if not os.path.exists(model_folder_path):
@@ -28,7 +29,7 @@ class QTrainer:
         self.lr=lr
         self.gamma=gamma
         self.model=model
-        self.optimizer = optim.Adam(model.parameters(), lr=self.lr)
+        self.optimizer = optim.Adam(model.parameters(), lr=self.lr) # adam optimiser for loss calculn
         self.criterion = nn.MSELoss()
 
     def train_step(self, state, action, reward, next_state, done):

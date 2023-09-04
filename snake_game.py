@@ -6,13 +6,7 @@ import numpy as np
 
 pygame.init()
 font = pygame.font.Font('arial.ttf', 25)
-#font = pygame.font.SysFont('arial', 25)
 
-#reset
-#reward
-#play(action) -> direction
-# game iteration
-# is_collison
 
 class Direction(Enum):
     RIGHT = 1
@@ -29,8 +23,8 @@ BLUE1 = (0, 0, 255)
 BLUE2 = (0, 100, 255)
 BLACK = (0,0,0)
 
-BLOCK_SIZE = 20
-SPEED = 160
+BLOCK_SIZE = 20 # size of individual grid
+SPEED = 160 # fps
 
 class SnakeGameAI:
     
@@ -43,8 +37,7 @@ class SnakeGameAI:
         self.clock = pygame.time.Clock()
         self.reset()
         
-        # init game state
-
+    # resets the position
     def reset(self):
         self.direction = Direction.RIGHT
         
@@ -58,7 +51,7 @@ class SnakeGameAI:
         self._place_food()
         self.game_iterations=0
 
-        
+    # places food randomly at a place in the grid
     def _place_food(self):
         x = random.randint(0, (self.w-BLOCK_SIZE )//BLOCK_SIZE )*BLOCK_SIZE 
         y = random.randint(0, (self.h-BLOCK_SIZE )//BLOCK_SIZE )*BLOCK_SIZE
@@ -67,7 +60,6 @@ class SnakeGameAI:
             self._place_food()
         
     def play_step(self,action):
-        # 1. collect user input
         self.game_iterations+=1
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -113,6 +105,7 @@ class SnakeGameAI:
         
         return False
         
+    # updates the ui after every moment
     def _update_ui(self):
         self.display.fill(BLACK)
         
@@ -126,8 +119,8 @@ class SnakeGameAI:
         self.display.blit(text, [0, 0])
         pygame.display.flip()
         
+    # snake moment decided by the agent
     def _move(self, action):
-
         clock_wise=[Direction.RIGHT,Direction.DOWN,Direction.LEFT,Direction.UP]
         idx=clock_wise.index(self.direction)
 

@@ -49,7 +49,7 @@ conda activate snake_env
 pip install -r requirements.txt
 ```
 
-### Start everything
+### Starting the project
 ```bash
 python3 agent.py
 ```
